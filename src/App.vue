@@ -1,19 +1,49 @@
-<script>
-    // export default {
-    //     data() {
-    //         return {
-    //             message: 'oh! this is vue?'
-    //         };
-    //     }
-    // };
-</script>
+<!-- 컴포넌트 만들때 필요한 3개 -->
+<!-- template, script, style -->
 
 <template>
-    <!-- 다른 컴포넌트들을 붙여오겠음 -->
-    <h1>음식들</h1>
-    <item-list/>
+    <div class="app-container">
+        <!-- <h1>할 일을 관리하는 목록</h1> -->
+        <h1>{{ title }} 목록</h1>
+        <TodoList/>
+    </div>
 </template>
 
-<style>
+<script>
+    import TodoList from './components/todoList.vue';
+    
+    // 사용할 컴포넌트를 등록하는 방법
+    export default {
+        name: 'App',
+        components: {
+            TodoList
+        },
+        data() {
+            return {
+                title: 'Todo List'
+            }
+        }
+    };
+</script>
 
+<style>
+    .app-container {
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        border-radius: 8px;
+        background-color: #fff;
+    }
+
+    h1 {
+        color: #2c3e50;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    body {
+        background-color: #f5f5f5;
+        font-family: Arial, sans-serif;
+    }
 </style>
