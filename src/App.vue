@@ -1,29 +1,23 @@
-<!-- 컴포넌트 만들때 필요한 3개 -->
-<!-- template, script, style -->
-
+<!-- 컴포넌트 만들때는 3개 필요한거뭐였음?
+template script style 
+-->
 <template>
     <div class="app-container">
-        <!-- <h1>할 일을 관리하는 목록</h1> -->
-        <h1>{{ title }} 목록</h1>
-        <TodoList/>
+        <h1>할 일을 관리하는 목록</h1>
+        <TodoList />
     </div>
 </template>
 
 <script>
-    import TodoList from './components/todoList.vue';
-    
-    // 사용할 컴포넌트를 등록하는 방법
+    import TodoList from './components/todoList.vue'
+
+    // 사용할 컴포넌트를 등록하는 방법.
     export default {
         name: 'App',
         components: {
             TodoList
-        },
-        data() {
-            return {
-                title: 'Todo List'
-            }
         }
-    };
+    }
 </script>
 
 <style>
