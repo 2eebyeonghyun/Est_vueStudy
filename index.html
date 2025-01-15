@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
+
+<!-- 
+    ● SPA : Single Page Application
+        -> 하나의 HTML에 다수의 컴포넌트가 연결되는 형태
+        -> 상시 ajax( 상시 비동기)
+        -> react, vue 나오면서 각광받은 방식
+        -> 서버로부터 데이터만 요청하고 받아온 후 클라이언트에서 그리는 CSR방식을 추구한다.
+        -> (모든 HTML/CSS/JS 요소를 전부 땡겨온 후 비동기 통신을 통해서 데이터만 받아오는 방법)
+
+    장점 : 
+      - 부드러운 화면전환( 사용자 입장에서 부드러워 보인다.)
+      - 연산의 분산화를 통한 서버의 부담을 줄일 수 있다.
+      - 생산성 향상 -> 컴포넌트 별로 개발이 진행되는 점
+      - 디바이스에서도 동일하게 쓸 수 있다는점( 서버의 API화)
+
+    단점
+      - 검색엔진 인덱스화가 난해하다.( 비싸다)
+    
+
+    ● MPA : Multi Page Application
+        -> 바닐라 JS할 때는 이렇게 했다.
+        -> ajax, axios등으로 비동기를 처리하는게 아니라면 기본적으로는 동기방식
+        -> SSR( Server Side Rendering)
+
+    장/단점 :
+      - SPA의 반대 (SPA의 단점이 MPA 장점, SPA의 장점이 MPA의 단점)
+
+
+    ● SFC와 컴포넌트
+    
+    ● 컴포넌트 : 재사용이 가능한 각각의 독립된 모듈( 코드 덩어리)
+      -> SPA 방식에서는 컴포넌트를 어떻게 조합하느냐가 프로젝트의 성패
+      -> 컴포넌트 중심의 개발방식을 통해 코드의 재사용성과 생산성을 높일 수 있다.
+         (유지보수성은 글쎄..?)
+
+    ● SFC( Single File Component) : 파일 하나가 하나의 컴포넌트를 구성한다.
+      -> .vue라는 파일에 template, script, style 3개의 태그를 이용하여 컴포넌트를 구성한다.
+      -> .vue파일은 어차피 브라우저가 못읽기 때문에 읽을 수 있도록 컴파일이 필요하다.
+          그것을 처리해주는것이 Vite( 과거에는 Vue CLI)
+-->
