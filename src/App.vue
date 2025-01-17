@@ -1,43 +1,126 @@
-<!-- 컴포넌트 만들때는 3개 필요한거뭐였음?
-template script style 
--->
 <template>
-    <div class="app-container">
-        <h1>할 일을 관리하는 목록</h1>
-        <TodoList />
-    </div>
+    <!-- <div id="app">
+        <slot-comp>
+            <template v-slot:header>
+                <h1>슬롯이 정상적으로 적용되면 이게 나오겠져?</h1>
+            </template>
+            
+            <h2>이건 어디서 어떻게 사용하는지?</h2>
+
+            <template v-slot:footer>
+                <h1>footer 정의</h1>
+            </template>
+        </slot-comp>
+    </div> -->
+
+    <!-- <div id="wrapper">
+        <slot-comp v-for="i in foods">
+            <img v-bind:src="i.url">
+            <h3>{{ i.name }}</h3>
+            <p>{{ i.desc }}</p>
+        </slot-comp>
+    </div> -->
+
+    <!-- 
+    슬롯의 규칙
+    <slot-comp>
+        이 영역은 자식 컴포넌트에 작업한 내용이 출력
+    </slot-comp>
+    <slot-comp>
+        내용을 추가하면 이 영역의 내용을 쓸 수 있다.
+    </slot-comp> 
+    -->
+
+    <h1>동적 컴포넌트 예시</h1>
+    <button @click="toggleValue= !toggleValue">컴포넌트 스위치</button>
+    <component :is="activeComp"></component>
 </template>
-
+  
 <script>
-    import TodoList from './components/todoList.vue'
+    // 컴포넌트 지역화
+    // 원하는 컴포넌트에 선언함으로써 지역화를 진행
+    // import CompOne from './components/CompOne.vue'
 
-    // 사용할 컴포넌트를 등록하는 방법.
+    // export default {
+    //     components: {
+    //         'comp-one': CompOne
+    //     }
+    // }
+    
+
+    // import SlotComp from './components/SlotComp.vue';
+    // export default {
+    //     data() {
+    //         return {
+    //             foods: [
+    //                 { name: 'Apple', desc: 'Apples are a type of fruit that grow on trees.', url: './src/assets/img_apple.svg'},
+    //                 { name: 'Pizza', desc: 'Pizza has a bread base with tomato sauce, cheese, and toppings on top.', url: './src/assets/img_pizza.svg'},
+    //                 { name: 'Rice', desc: 'Rice is a type of grain that people like to eat.', url: './src/assets/img_rice.svg'},
+    //                 { name: 'Fish', desc: 'Fish is an animal that lives in water.', url: './src/assets/img_fish.svg'},
+    //                 { name: 'Cake', desc: 'Cake is something sweet that tates good but is not consodered healthy.', url: './src/assets/img_cake.svg'}
+    //             ]
+    //         }
+    //     }
+    // }
+    
+
+    // 동적 컴포넌트 예시
     export default {
-        name: 'App',
-        components: {
-            TodoList
+        data() {
+            return {
+                toggleValue: true
+            }
+        },
+        computed: {
+            activeComp() {
+
+                if(this.toggleValue) {
+                    return 'comp-one'
+                } else {
+                    return 'comp-two'
+                }
+            }
         }
     }
 </script>
-
+  
 <style>
-    .app-container {
-        max-width: 600px;
-        margin: 2rem auto;
-        padding: 20px;
-        box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        border-radius: 8px;
-        background-color: #fff;
+    /* p {
+        width: 200px;
     }
 
-    h1 {
-        color: #2c3e50;
-        text-align: center;
-        margin-bottom: 2rem;
+    #app div {
+        border: dashed black 1px;
+        margin: 10px;
+        padding: 10px;
+        display: inline-block;
     }
 
-    body {
-        background-color: #f5f5f5;
-        font-family: Arial, sans-serif;
+    .compOneDiv {
+        background-color: lightgreen;
+    }
+
+    .compTwoDiv {
+        background-color: lightcoral;
+    } */
+
+    /*
+    #wrapper {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    #wrapper img {
+        display: block; 
+        margin: auto; 
+        width: 60%;
+    }
+    */
+
+    div {
+        width: 300px;
+        margin: 15px;
+        padding: 15px;
+        border: 3px solid #000;
     }
 </style>

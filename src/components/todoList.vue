@@ -54,7 +54,7 @@
 
         <!-- 남은 할 일 개수 표시 -->
         <div class="todo-stats">
-            남은 할 일: {{ remainingTodos }} 개  // 완료되지 않은 할 일 개수 표시
+            남은 할 일: {{ remaininTodos }} 개  // 완료되지 않은 할 일 개수 표시
         </div>
     </div>
 </template>
