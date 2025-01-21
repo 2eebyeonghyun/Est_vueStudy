@@ -84,7 +84,7 @@
     }
 </script>
   
-<style>
+<style scoped>
     /* p {
         width: 200px;
     }

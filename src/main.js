@@ -22,23 +22,26 @@ import { createRouter, createWebHistory } from 'vue-router'
 // import lifeCycle4 from './components/beforeDelete.vue';
 // import lifeCycle5 from './components/render.vue';
 
-import App from './app-routing.vue';
-import FoodItems from './route/FoodItems.vue'
-import Collections from './route/Collections.vue'
+// import App from './app-routing.vue';
+// import FoodItems from './route/FoodItems.vue'
+// import Collections from './route/Collections.vue'
 // import { createRouter, createWebHistory } from 'vue-router';
 
-const router = createRouter({
-    history: createWebHistory(),
-    routes: [
-        {path: '/food', component: FoodItems},
-        {path: '/animals', component: Collections}
-    ]
-})
+// const router = createRouter({
+//     history: createWebHistory(),
+//     routes: [
+//         {path: '/food', component: FoodItems},
+//         {path: '/animals', component: Collections}
+//     ]
+// });
+
+// import App from './app-animation.vue';
+import App from './app-animation2.vue';
 
 const app = createApp(App)
 // 실행하기전에 우선순위를 가져가는 효과
 // 마운트하기전에 router의 정보를 전달한다.
-app.use(router);
+// app.use(router);
 
 // app.component('item-list', itemList);
 // app.component('props-exam', PropsExam);
