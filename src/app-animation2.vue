@@ -43,14 +43,15 @@
 
     @keyframes swirlAdded {
         from {
-        opacity: 0;
-        rotate: 0;
-        scale: 0.1;
+            opacity: 0;
+            rotate: 0;
+            scale: 0.1;
         }
+        
         to {
-        opacity: 1;
-        rotate: 360deg;
-        scale: 1;
+            opacity: 1;
+            rotate: 360deg;
+            scale: 1;
         }
     }
 

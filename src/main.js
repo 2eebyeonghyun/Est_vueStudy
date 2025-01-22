@@ -36,7 +36,8 @@ import { createRouter, createWebHistory } from 'vue-router'
 // });
 
 // import App from './app-animation.vue';
-import App from './app-animation2.vue';
+// import App from './app-animation2.vue';
+import App from './app-animationGroup.vue';
 
 const app = createApp(App)
 // 실행하기전에 우선순위를 가져가는 효과
